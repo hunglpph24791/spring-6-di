@@ -1,21 +1,21 @@
 package ph.springframework.spring6di.controller;
 
 import org.springframework.stereotype.Controller;
-import ph.springframework.spring6di.Service.GettingService;
-import ph.springframework.spring6di.Service.GettingServiceImpl;
+import ph.springframework.spring6di.Service.sayGreetingService;
+import ph.springframework.spring6di.Service.sayGreetingServiceImpl;
 
 @Controller
 public class MyController {
 
-   private final GettingService gettingService;
+   private final sayGreetingService gettingService;
 
    public MyController() {
-       this.gettingService = new GettingServiceImpl();
+       this.gettingService = new sayGreetingServiceImpl();
    }
 
    public String sayHello() {
        System.out.println("Tôi là Hùng");
-        return "Tôi là trân";
+        return gettingService.sayGreeting();
     }
 
 }
